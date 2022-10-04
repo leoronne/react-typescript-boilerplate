@@ -1,10 +1,20 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "react-typescript-boilerplate",
+  "id": "/",
+  "name": "React + TypeScript Boilerplate",
+  "author": "Leonardo Ronne <leoronne@gmail.com> (https://ronne.dev/)",
+  "description": "This project is a simple React + TypeScript boilerplate that I use for personal projects",
+  "developer": {
+    "name": "Leonardo Ronne",
+    "url": "https://github.com/leoronne"
+  },
+  "homepage_url": "https://ronne.dev",
+  "default_icon": "favicon.ico",
+  "default_locale": "en",
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "256x256",
       "type": "image/x-icon"
     },
     {
@@ -13,13 +23,23 @@
       "sizes": "192x192"
     },
     {
+      "src": "logo256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
       "src": "logo512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "logo1024.png",
+      "type": "image/png",
+      "sizes": "1024x1024"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#915cec",
+  "background_color": "#915cec"
 }
