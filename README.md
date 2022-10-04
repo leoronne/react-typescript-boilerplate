@@ -1,46 +1,86 @@
-# Getting Started with Create React App
+<p align="center">
+  <img src="misc\png\transparentBanner.png" width="60%" />
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##
 
-## Available Scripts
+<p align="center">
+  <a href="#project-star2">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#techs-rocket">Techs</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#installation-wrench">Installation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#start-on">Start</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#test-heavy_check_mark">Test</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#contributing-">Contributing</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#license-memo">License</a>
+  <br>
+  <br>
 
-In the project directory, you can run:
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/leoronne/react-typescript-boilerplate">
+  <img alt="Top language" src="https://img.shields.io/github/languages/top/leoronne/react-typescript-boilerplate">
+  <img alt="Last commit" src="https://img.shields.io/github/last-commit/leoronne/react-typescript-boilerplate">
 
-### `npm start`
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+##
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<p align="center">
+  <img src="misc\png\banner.png"/>
+</p>
 
-### `npm test`
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project :star2:
 
-### `npm run build`
+This repo contains a simple React + TypeScript boilerplate that I use for personal projects. With the following features:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Dark/Light Mode (with system preference implemented);
+- Theme personalization;
+- Internationalization for Portuguese and English;
+- Unit Testing with Jest and React Testing Library.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br>
 
-### `npm run eject`
+## Techs :rocket:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [x] [ReactJS](https://reactjs.org);
+- [x] [TypeScript](https://www.typescriptlang.org/);
+- [x] [MUI](https://mui.com/).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Installation :wrench:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+First you need to clone the project using `git clone https://github.com/leoronne/react-typescript-boilerplate.git`.
 
-## Learn More
+Then you can install the application using `npm install` or `yarn install`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Start :on:
+
+To start the application interface just run `npm start` or `yarn start` on the root dir.
+
+<br>
+
+## Test :heavy_check_mark:
+
+To run the tests on this application, just run `npm run test:cover` or `yarn test:cover`, it will generate a coverage report on the root dir.
+
+<br>
+
+## Contributing 🤔
+
+Please read [CONTRIBUTING](https://github.com/leoronne/react-typescript-boilerplate/blob/master/CONTRIBUTING.md) for details on code of conduct, and the process for submitting pull requests to the project.
+
+<br>
+
+## License :memo:
+
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+
+- **[MIT license](https://github.com/leoronne/react-typescript-boilerplate/blob/master/LICENSE)**
+- Copyright 2022 © <a href="https://github.com/leoronne" target="_blank">Leonardo Ronne</a>.
+
+##
