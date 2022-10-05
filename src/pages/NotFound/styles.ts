@@ -1,7 +1,7 @@
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 
-import { ReactComponent as NotFoundBg } from '../../assets/svg/404.svg';
+import { ReactComponent as NotFoundBg } from 'assets/svg/404.svg';
 
 export const Container = styled(Box)(({ theme }) => ({
   padding: `0 ${theme.spacing(5)}`,

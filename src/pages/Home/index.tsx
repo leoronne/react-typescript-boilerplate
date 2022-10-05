@@ -1,7 +1,7 @@
 import Typography from '@mui/material/Typography';
 import { useTranslation } from 'react-i18next';
 
-import { withDefaultLayout } from '../../layouts';
+import { withDefaultLayout } from 'layouts';
 
 import * as Styles from './styles';
 

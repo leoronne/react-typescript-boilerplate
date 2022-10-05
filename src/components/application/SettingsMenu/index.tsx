@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import Typography from '@mui/material/Typography';
 import ListItem from '@mui/material/ListItem';
 
-import { Drawer } from '../../ui';
+import { Drawer } from 'components/ui';
 import { LanguageOptions, ThemeOptions } from '../CustomOptions';
 
 function SettingsMenu() {

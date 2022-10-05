@@ -1,7 +1,7 @@
 import ButtonGroup from '@mui/material/ButtonGroup';
 import { styled } from '@mui/material/styles';
 
-import { Button } from '../../ui/Button';
+import { Button } from 'components/ui/Button';
 
 export const ButtonRow = styled(ButtonGroup)(({ theme }) => ({
   borderRadius: `${theme.spacing(1)}`,

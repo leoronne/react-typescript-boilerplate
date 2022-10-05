@@ -3,8 +3,8 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { createTheme, ThemeProvider as ThemeProviderMUI } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
-import { globalStyles, theme } from '../styles';
-import { ThemeContext, ThemeModes } from '../contexts';
+import { globalStyles, theme } from 'styles';
+import { ThemeContext, ThemeModes } from 'contexts';
 
 const allowedModes: ThemeModes[] = ['dark', 'light', 'system'];
 

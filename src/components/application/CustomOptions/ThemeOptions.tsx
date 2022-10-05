@@ -4,7 +4,7 @@ import SettingsBrightnessOutlinedIcon from '@mui/icons-material/SettingsBrightne
 
 import { useTranslation } from 'react-i18next';
 
-import { useTheme } from '../../../hooks';
+import { useTheme } from 'hooks';
 import * as Styles from './styles';
 
 function ThemeOptions() {

@@ -1,9 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import SvgIcon from '@mui/material/SvgIcon';
 
-import { allowedLanguages } from '../../../providers/LanguageProvider';
-import { useLanguage } from '../../../hooks';
+import { CONSTS } from 'shared';
+import { useLanguage } from 'hooks';
 import * as Styles from './styles';
+
+const { ALLOWED_LANGUAGES } = CONSTS;
 
 function LanguageOptions() {
   const { t } = useTranslation();
@@ -11,7 +13,7 @@ function LanguageOptions() {
 
   return (
     <Styles.ButtonRow variant="outlined">
-      {allowedLanguages.map(option => (
+      {ALLOWED_LANGUAGES.map(option => (
         <Styles.SelectButton
           key={option.name}
           type="button"

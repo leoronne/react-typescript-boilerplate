@@ -1,4 +1,4 @@
-import { Logo } from '../../ui';
+import { Logo } from 'components/ui';
 import SettingsMenu from '../SettingsMenu';
 import * as Styles from './styles';
 

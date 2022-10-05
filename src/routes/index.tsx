@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes as RoutesList, Route } from 'react-router-dom';
 
-import { Home, NotFound } from '../pages';
+import { Home, NotFound } from 'pages';
 
 function Routes() {
   return (

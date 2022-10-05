@@ -2,8 +2,9 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
 import { englishUS, portugueseBR } from './locales';
-import { allowedLanguages, allowedLanguagesSlugs } from './providers/LanguageProvider';
+import { CONSTS } from './shared';
 
+const { ALLOWED_LANGUAGES, ALLOWED_LANGUAGES_SLUGS } = CONSTS;
 
 i18n.use(initReactI18next).init({
   debug: true,
@@ -13,10 +14,10 @@ i18n.use(initReactI18next).init({
     },
     pt: { translation: portugueseBR },
   },
-  lng: allowedLanguages[0].slug,
-  fallbackLng: allowedLanguages[0].slug,
+  lng: ALLOWED_LANGUAGES[0].slug,
+  fallbackLng: ALLOWED_LANGUAGES[0].slug,
 
-  supportedLngs: allowedLanguagesSlugs,
+  supportedLngs: ALLOWED_LANGUAGES_SLUGS,
   interpolation: {
     escapeValue: false,
   },

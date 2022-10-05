@@ -2,9 +2,9 @@ import Typography from '@mui/material/Typography';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import { useTranslation } from 'react-i18next';
 
-import { withDefaultLayout } from '../../layouts';
+import { withDefaultLayout } from 'layouts';
 
-import { Button } from '../../components/ui/Button';
+import { Button } from 'components/ui/Button';
 import * as Styles from './styles';
 
 function NotFound() {

@@ -1,7 +1,7 @@
 import { styled } from '@mui/material/styles';
 import Link from '@mui/material/Link';
 
-import { ReactComponent as Reactlogo } from '../../../assets/svg/logo.svg';
+import { ReactComponent as Reactlogo } from 'assets/svg/logo.svg';
 
 export const Container = styled(Link)({
   transition: '0.7s ease-in-out',

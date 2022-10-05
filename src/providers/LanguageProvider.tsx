@@ -1,27 +1,10 @@
 import React from 'react';
 import i18n from 'i18next';
 
-import { ReactComponent as Brazil } from '../assets/svg/brazil.svg';
-import { ReactComponent as USA } from '../assets/svg/usa.svg';
+import { CONSTS } from 'shared';
+import { LanguageContext } from 'contexts';
 
-import { LanguageContext } from '../contexts';
-
-export const allowedLanguages = [
-  {
-    name: 'English',
-    slug: 'en',
-    icon: <USA />,
-    translateSlug: 'language-en',
-  },
-  {
-    name: 'Português',
-    slug: 'pt',
-    icon: <Brazil />,
-    translateSlug: 'language-pt',
-  },
-];
-
-export const allowedLanguagesSlugs = allowedLanguages.map(language => language.slug)
+const { ALLOWED_LANGUAGES_SLUGS } = CONSTS;
 
 function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = React.useState<string>(i18n.language || 'en');
@@ -43,7 +26,7 @@ function LanguageProvider({ children }: { children: React.ReactNode }) {
     try {
       const strLanguage = localStorage.getItem('@eSports-Matcher/Language');
 
-      if (strLanguage && allowedLanguagesSlugs.includes(strLanguage)) changeLanguage(strLanguage);
+      if (strLanguage && ALLOWED_LANGUAGES_SLUGS.includes(strLanguage)) changeLanguage(strLanguage);
     } catch (err: any) {
       // eslint-disable-next-line no-console
       console.error(err?.message);
