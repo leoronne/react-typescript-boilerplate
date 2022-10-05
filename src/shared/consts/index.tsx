@@ -1,4 +1,3 @@
-import { ThemeModes } from 'contexts';
 import { ReactComponent as Brazil } from 'assets/svg/brazil.svg';
 import { ReactComponent as USA } from 'assets/svg/usa.svg';
 
@@ -14,13 +13,13 @@ export const ALLOWED_LANGUAGES = [
     name: 'English',
     slug: 'en',
     icon: <USA />,
-    translateSlug: 'language-en',
+    translateSlug: 'language.en',
   },
   {
     name: 'Português',
     slug: 'pt',
     icon: <Brazil />,
-    translateSlug: 'language-pt',
+    translateSlug: 'language.pt',
   },
 ];
 

@@ -3,7 +3,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { createTheme, ThemeProvider as ThemeProviderMUI } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
-import { ThemeContext, ThemeModes } from 'contexts';
+import { ThemeContext,  } from 'contexts';
 import { ALLOWED_THEME_MODES, DEFAULT_THEME_MODE, APP_SLUG } from 'shared/consts';
 import { globalStyles, theme } from 'styles';
 
