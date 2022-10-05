@@ -3,13 +3,14 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { createTheme, ThemeProvider as ThemeProviderMUI } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
-import { globalStyles, theme } from 'styles';
 import { ThemeContext, ThemeModes } from 'contexts';
+import { ALLOWED_THEME_MODES, DEFAULT_THEME_MODE, APP_SLUG } from 'shared/consts';
+import { globalStyles, theme } from 'styles';
 
-const allowedModes: ThemeModes[] = ['dark', 'light', 'system'];
+export const localStorageSlug = `@${APP_SLUG}/Theme`;
 
 function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [mode, setMode] = React.useState<ThemeModes>('system');
+  const [mode, setMode] = React.useState<ThemeModes>(DEFAULT_THEME_MODE);
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
 
   const getTheme = React.useCallback(() => {
@@ -20,7 +21,7 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   const changeTheme = React.useCallback((scheme: ThemeModes) => {
     try {
-      localStorage.setItem('@eSports-Matcher/Theme', scheme);
+      localStorage.setItem(localStorageSlug, scheme);
     } catch (err: any) {
       // eslint-disable-next-line no-console
       console.error(err?.message);
@@ -31,9 +32,9 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   React.useEffect(() => {
     try {
-      const scheme = localStorage.getItem('@eSports-Matcher/Theme');
+      const scheme = localStorage.getItem(localStorageSlug);
 
-      if (scheme && allowedModes.includes(scheme as ThemeModes)) setMode(scheme as ThemeModes);
+      if (scheme && ALLOWED_THEME_MODES.includes(scheme as ThemeModes)) setMode(scheme as ThemeModes);
     } catch (err: any) {
       // eslint-disable-next-line no-console
       console.error(err?.message);

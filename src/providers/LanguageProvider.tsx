@@ -1,20 +1,20 @@
 import React from 'react';
 import i18n from 'i18next';
 
-import { CONSTS } from 'shared';
+import { ALLOWED_LANGUAGES_SLUGS, DEFAULT_LANGUAGE, APP_SLUG } from 'shared/consts';
 import { LanguageContext } from 'contexts';
 
-const { ALLOWED_LANGUAGES_SLUGS } = CONSTS;
+export const localStorageSlug = `@${APP_SLUG}/Language`;
 
 function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = React.useState<string>(i18n.language || 'en');
+  const [language, setLanguage] = React.useState<string>(i18n.language || DEFAULT_LANGUAGE.slug);
 
   const changeLanguage = React.useCallback((lgn: string) => {
     try {
       if (i18n.language !== lgn) {
         i18n.changeLanguage(lgn);
         setLanguage(lgn);
-        localStorage.setItem('@eSports-Matcher/Language', lgn);
+        localStorage.setItem(localStorageSlug, lgn);
       }
     } catch (err: any) {
       // eslint-disable-next-line no-console
@@ -24,7 +24,7 @@ function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   React.useEffect(() => {
     try {
-      const strLanguage = localStorage.getItem('@eSports-Matcher/Language');
+      const strLanguage = localStorage.getItem(localStorageSlug);
 
       if (strLanguage && ALLOWED_LANGUAGES_SLUGS.includes(strLanguage)) changeLanguage(strLanguage);
     } catch (err: any) {
