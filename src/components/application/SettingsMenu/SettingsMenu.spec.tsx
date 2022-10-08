@@ -1,4 +1,4 @@
-import { screen, waitFor, act } from '@testing-library/react';
+import { waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import i18n from 'i18next';
 
@@ -41,10 +41,8 @@ describe('<SettingsMenu />', () => {
     userEvent.click(getButton(i18n.t('settings.open')));
 
     await waitFor(() => {
-      expect(getHeading(i18n.t('settings.base'))).toBeTruthy();
       expect(getHeading(i18n.t('language.base'))).toBeTruthy();
       expect(getHeading(i18n.t('theme.base'))).toBeTruthy();
-      expect(getButton(i18n.t('settings.close'))).toBeTruthy();
     });
   });
 });

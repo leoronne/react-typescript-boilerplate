@@ -1,13 +1,15 @@
 import React from 'react';
 import ThemeProvider from './ThemeProvider';
-import LanguageProvider from './LanguageProvider';
 
 interface IComposeProvidersProps {
   with: Array<React.ElementType>;
   children: React.ReactNode;
 }
 
-function ComposeProviders({ with: Providers, children }: IComposeProvidersProps) {
+function ComposeProviders({
+  with: Providers,
+  children,
+}: IComposeProvidersProps) {
   return (
     <>
       {Providers.reduce(
@@ -21,4 +23,4 @@ function ComposeProviders({ with: Providers, children }: IComposeProvidersProps)
 }
 
 export default ComposeProviders;
-export { ThemeProvider, LanguageProvider };
+export { ThemeProvider };

@@ -1,15 +1,25 @@
+import i18n from 'i18next';
 import { useTranslation } from 'react-i18next';
 import SvgIcon from '@mui/material/SvgIcon';
 
-import { CONSTS } from 'shared';
-import { useLanguage } from 'hooks';
+import { ALLOWED_LANGUAGES, languageLocalStorageSlug } from 'shared/consts';
+import { setItem } from 'utils/local-storage';
 import * as Styles from './styles';
-
-const { ALLOWED_LANGUAGES } = CONSTS;
 
 function LanguageOptions() {
   const { t } = useTranslation();
-  const { changeLanguage, language } = useLanguage();
+
+  const changeLanguage = (lgn: string) => {
+    try {
+      if (i18n.language !== lgn) {
+        i18n.changeLanguage(lgn);
+        setItem(languageLocalStorageSlug, lgn);
+      }
+    } catch (err: any) {
+      // eslint-disable-next-line no-console
+      console.error(err?.message);
+    }
+  };
 
   return (
     <Styles.ButtonRow variant="outlined">
@@ -18,13 +28,15 @@ function LanguageOptions() {
           key={option.name}
           type="button"
           size="small"
-          aria-label={`Change language to ${t(option.translateSlug)}`}
+          aria-label={t(option.translateKey)}
           variant="outlined"
-          className={`${language === option.slug ? 'option-selected' : ''}`}
+          className={`${
+            i18n.language === option.slug ? 'option-selected' : ''
+          }`}
           startIcon={<SvgIcon>{option.icon}</SvgIcon>}
           onClick={() => changeLanguage(option.slug)}
         >
-          {t(option.translateSlug)}
+          {t(option.translateKey)}
         </Styles.SelectButton>
       ))}
     </Styles.ButtonRow>

@@ -1,16 +1,26 @@
 import React from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { createTheme, ThemeProvider as ThemeProviderMUI } from '@mui/material/styles';
+import {
+  createTheme,
+  ThemeProvider as ThemeProviderMUI,
+} from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
-import { ThemeContext,  } from 'contexts';
-import { ALLOWED_THEME_MODES, DEFAULT_THEME_MODE, APP_SLUG } from 'shared/consts';
+import { ThemeContext } from 'contexts';
+import { ALLOWED_THEME_MODES, DEFAULT_THEME_MODE, localStorageSlugTheme } from 'shared/consts';
 import { globalStyles, theme } from 'styles';
-
-export const localStorageSlug = `@${APP_SLUG}/Theme`;
+import { getItem, setItem } from 'utils/local-storage';
 
 function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [mode, setMode] = React.useState<ThemeModes>(DEFAULT_THEME_MODE);
+  const [mode, setMode] = React.useState<ThemeModes>(() => {
+    const scheme = getItem(localStorageSlugTheme) as ThemeModes;
+
+    if (scheme && ALLOWED_THEME_MODES.some(t => t.slug === scheme))
+      return scheme;
+
+    return DEFAULT_THEME_MODE.slug;
+  });
+
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
 
   const getTheme = React.useCallback(() => {
@@ -20,28 +30,14 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
   }, [mode, prefersDarkMode]);
 
   const changeTheme = React.useCallback((scheme: ThemeModes) => {
-    try {
-      localStorage.setItem(localStorageSlug, scheme);
-    } catch (err: any) {
-      // eslint-disable-next-line no-console
-      console.error(err?.message);
-    } finally {
-      setMode(scheme);
-    }
+    setItem(localStorageSlugTheme, scheme);
+    setMode(scheme);
   }, []);
 
-  React.useEffect(() => {
-    try {
-      const scheme = localStorage.getItem(localStorageSlug);
-
-      if (scheme && ALLOWED_THEME_MODES.includes(scheme as ThemeModes)) setMode(scheme as ThemeModes);
-    } catch (err: any) {
-      // eslint-disable-next-line no-console
-      console.error(err?.message);
-    }
-  }, []);
-
-  const currentTheme = React.useMemo(() => createTheme(theme(getTheme())), [getTheme]);
+  const currentTheme = React.useMemo(
+    () => createTheme(theme(getTheme())),
+    [getTheme]
+  );
 
   const colorMode = React.useMemo(() => mode, [mode]);
 

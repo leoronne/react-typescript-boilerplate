@@ -1,9 +1,9 @@
-import Providers, { ThemeProvider, LanguageProvider } from './providers';
+import Providers, { ThemeProvider } from './providers';
 import Routes from './routes';
 
 function App() {
   return (
-    <Providers with={[ThemeProvider, LanguageProvider]}>
+    <Providers with={[ThemeProvider]}>
       <Routes />
     </Providers>
   );

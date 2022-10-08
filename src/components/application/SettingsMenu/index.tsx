@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import ListItem from '@mui/material/ListItem';
 
 import { Drawer, IconButton } from 'components/ui';
-import { LanguageOptions, ThemeOptions } from '../CustomOptions';
+import { LanguageOptions, ThemeOptions } from './CustomOptions';
 
 function SettingsMenu() {
   const { t } = useTranslation();

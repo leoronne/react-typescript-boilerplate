@@ -1,8 +1,11 @@
 import { waitFor, renderHook, act } from '@testing-library/react';
 
 import { useTheme } from 'hooks';
-import ThemeProvider, { localStorageSlug } from 'providers/ThemeProvider';
-import { DEFAULT_THEME_MODE, ALLOWED_THEME_MODES } from 'shared/consts';
+import ThemeProvider from 'providers/ThemeProvider';
+import { DEFAULT_THEME_MODE, ALLOWED_THEME_MODES, localStorageSlugTheme } from 'shared/consts';
+import { appLocalStorageSlug } from 'utils/local-storage';
+
+const notSelectedThemes = ALLOWED_THEME_MODES.filter(option => option.slug !== DEFAULT_THEME_MODE.slug);
 
 describe('Theme Hook', () => {
   beforeEach(() => global.localStorage.clear());
@@ -12,16 +15,16 @@ describe('Theme Hook', () => {
       wrapper: ThemeProvider,
     });
 
-    expect(result.current.mode).toBe(DEFAULT_THEME_MODE);
+    expect(result.current.mode).toBe(DEFAULT_THEME_MODE.slug);
   });
 
   it('should load theme stored on localStorage', async () => {
-    global.localStorage.setItem(localStorageSlug, ALLOWED_THEME_MODES[1]);
+    global.localStorage.setItem(`${appLocalStorageSlug}${localStorageSlugTheme}`, notSelectedThemes[0].slug);
     const { result } = renderHook(() => useTheme(), {
       wrapper: ThemeProvider,
     });
 
-    expect(result.current.mode).toBe(ALLOWED_THEME_MODES[1]);
+    expect(result.current.mode).toBe(notSelectedThemes[0].slug);
   });
 
   it('should be able to change theme', async () => {
@@ -29,14 +32,14 @@ describe('Theme Hook', () => {
       wrapper: ThemeProvider,
     });
 
-    expect(result.current.mode).toBe(DEFAULT_THEME_MODE);
+    expect(result.current.mode).toBe(DEFAULT_THEME_MODE.slug);
 
     await act(async () => {
-      result.current.changeTheme(ALLOWED_THEME_MODES[1]);
+      result.current.changeTheme(notSelectedThemes[0].slug);
     });
 
     await waitFor(() => {
-      expect(result.current.mode).toBe(ALLOWED_THEME_MODES[1]);
+      expect(result.current.mode).toBe(notSelectedThemes[0].slug);
     });
   });
 });
