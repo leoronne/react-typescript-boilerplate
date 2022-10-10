@@ -23,9 +23,13 @@ export const theme = (mode: 'dark' | 'light'): ThemeOptions => ({
     },
   },
   typography: {
+    fontFamily: `'Inter', 'Roboto', 'Montserrat', Source Sans Pro, Helvetica Neue, Arial, sans-serif`,
     h1: {
-      fontWeight: '700',
+      fontWeight: '800',
       fontSize: '3rem',
+    },
+    h2: {
+      fontWeight: '700',
     },
     h5: {
       fontWeight: '400',
@@ -41,6 +45,9 @@ export const theme = (mode: 'dark' | 'light'): ThemeOptions => ({
     subtitle2: {
       textTransform: 'uppercase',
       letterSpacing: '0.08rem',
+    },
+    body1: {
+      lineHeight: '2',
     },
     body2: {
       fontSize: '0.8rem',

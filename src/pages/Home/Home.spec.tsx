@@ -7,8 +7,8 @@ describe('<Home />', () => {
   it('Should contain correct texts', async () => {
     render(<Home />);
 
-    expect(getHeading(i18n.t('homepage.title'))).toBeTruthy();
+    expect(getHeading(i18n.t('homepage.title'))).toBeInTheDocument();
 
-    expect(getHeading(i18n.t('homepage.subtitle'))).toBeTruthy();
+    expect(getHeading(i18n.t('homepage.subtitle'))).toBeInTheDocument();
   });
 });

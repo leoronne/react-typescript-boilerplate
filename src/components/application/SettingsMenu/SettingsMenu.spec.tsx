@@ -12,8 +12,8 @@ describe('<SettingsMenu />', () => {
     userEvent.click(getButton(i18n.t('settings.open')));
 
     await waitFor(() => {
-      expect(getHeading(i18n.t('settings.base'))).toBeTruthy();
-      expect(getButton(i18n.t('settings.close'))).toBeTruthy();
+      expect(getHeading(i18n.t('settings.base'))).toBeInTheDocument();
+      expect(getButton(i18n.t('settings.close'))).toBeInTheDocument();
     });
   });
 
@@ -23,15 +23,15 @@ describe('<SettingsMenu />', () => {
     userEvent.click(getButton(i18n.t('settings.open')));
 
     await waitFor(() => {
-      expect(getHeading(i18n.t('settings.base'))).toBeTruthy();
-      expect(getButton(i18n.t('settings.close'))).toBeTruthy();
+      expect(getHeading(i18n.t('settings.base'))).toBeInTheDocument();
+      expect(getButton(i18n.t('settings.close'))).toBeInTheDocument();
     });
 
     userEvent.click(getButton(i18n.t('settings.close')));
 
     await waitFor(() => {
-      expect(queryHeading(i18n.t('settings.base'))).not.toBeTruthy();
-      expect(queryButton(i18n.t('settings.close'))).not.toBeTruthy();
+      expect(queryHeading(i18n.t('settings.base'))).not.toBeInTheDocument();
+      expect(queryButton(i18n.t('settings.close'))).not.toBeInTheDocument();
     });
   });
 
@@ -41,8 +41,8 @@ describe('<SettingsMenu />', () => {
     userEvent.click(getButton(i18n.t('settings.open')));
 
     await waitFor(() => {
-      expect(getHeading(i18n.t('language.base'))).toBeTruthy();
-      expect(getHeading(i18n.t('theme.base'))).toBeTruthy();
+      expect(getHeading(i18n.t('language.base'))).toBeInTheDocument();
+      expect(getHeading(i18n.t('theme.base'))).toBeInTheDocument();
     });
   });
 });

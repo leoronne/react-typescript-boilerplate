@@ -4,7 +4,8 @@ import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import Typography from '@mui/material/Typography';
 import ListItem from '@mui/material/ListItem';
 
-import { Drawer, IconButton } from 'components/ui';
+import { IconButton } from 'components/ui/IconButton';
+import Drawer from 'components/ui/Drawer';
 import { LanguageOptions, ThemeOptions } from './CustomOptions';
 
 function SettingsMenu() {
@@ -17,22 +18,33 @@ function SettingsMenu() {
     right: false,
   });
 
-  const toggleDrawer = (anchor: Anchor, open?: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
-    if (
-      event &&
-      event.type === 'keydown' &&
-      ((event as React.KeyboardEvent).key === 'Tab' || (event as React.KeyboardEvent).key === 'Shift')
-    ) {
-      return;
-    }
+  const toggleDrawer =
+    (anchor: Anchor, open?: boolean) =>
+    (event: React.KeyboardEvent | React.MouseEvent) => {
+      if (
+        event &&
+        event.type === 'keydown' &&
+        ((event as React.KeyboardEvent).key === 'Tab' ||
+          (event as React.KeyboardEvent).key === 'Shift')
+      ) {
+        return;
+      }
 
-    setDrawerOrigin(state => ({ ...state, [anchor]: open || !state[anchor] }));
-  };
+      setDrawerOrigin(state => ({
+        ...state,
+        [anchor]: open || !state[anchor],
+      }));
+    };
 
   return (
     <>
-      <IconButton aria-label={t('settings.open')} onClick={toggleDrawer('right')}>
-        <SettingsRoundedIcon color={drawerOrigin.right ? 'primary' : 'inherit'} />
+      <IconButton
+        aria-label={t('settings.open')}
+        onClick={toggleDrawer('right')}
+      >
+        <SettingsRoundedIcon
+          color={drawerOrigin.right ? 'primary' : 'inherit'}
+        />
       </IconButton>
 
       <Drawer
@@ -40,7 +52,11 @@ function SettingsMenu() {
         state={drawerOrigin}
         handleDrawer={toggleDrawer}
       >
-        <ListItem divider sx={{ flexDirection: 'column', alignItems: 'flex-start' }} disableGutters>
+        <ListItem
+          divider
+          sx={{ flexDirection: 'column', alignItems: 'flex-start' }}
+          disableGutters
+        >
           <Typography variant="subtitle2" gutterBottom>
             {t('language.base')}
           </Typography>
@@ -48,7 +64,11 @@ function SettingsMenu() {
           <LanguageOptions />
         </ListItem>
 
-        <ListItem divider sx={{ flexDirection: 'column', alignItems: 'flex-start' }} disableGutters>
+        <ListItem
+          divider
+          sx={{ flexDirection: 'column', alignItems: 'flex-start' }}
+          disableGutters
+        >
           <Typography variant="subtitle2" gutterBottom>
             {t('theme.base')}
           </Typography>

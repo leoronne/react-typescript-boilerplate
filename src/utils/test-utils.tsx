@@ -73,6 +73,17 @@ export function getHeading(
   });
 }
 
+export function getImage(
+  name?:
+    | RegExp
+    | string
+    | ((accessibleName: string, element: Element) => boolean)
+): HTMLElement {
+  return screen.getByRole('img', {
+    name,
+  });
+}
+
 export function queryHeading(
   name?:
     | RegExp

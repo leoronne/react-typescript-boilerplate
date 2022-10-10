@@ -11,7 +11,7 @@ describe('<ThemeOptions />', () => {
     render(<ThemeOptions />);
 
     ALLOWED_THEME_MODES.forEach(option => {
-      expect(getButton(i18n.t(option.translateKey))).toBeTruthy();
+      expect(getButton(i18n.t(option.translateKey))).toBeInTheDocument();
     });
   });
 

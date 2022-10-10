@@ -13,7 +13,7 @@ export const Container = styled(Link)({
 });
 
 export const Logo = styled(Reactlogo)(({ theme }) => ({
-  height: '50px',
+  height: '20px',
   '& path': {
     fill: theme.palette.text.primary
   },

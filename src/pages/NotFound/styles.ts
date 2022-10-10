@@ -3,18 +3,20 @@ import Box from '@mui/material/Box';
 
 import { ReactComponent as NotFoundBg } from 'assets/svg/404.svg';
 
-export const Container = styled(Box)(({ theme }) => ({
-  padding: `0 ${theme.spacing(5)}`,
-  margin: 'auto',
-  width: '100%',
-  display: 'flex',
+import {
+  BannerContainer,
+  getBannerContainerHeight,
+} from 'components/ui/Containers';
+
+export const Container = styled(BannerContainer)(({ theme }) => ({
   gap: theme.spacing(10),
+  height: getBannerContainerHeight(true, theme),
+  flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'space-around',
-  position: 'relative',
 
   [theme.breakpoints.down('sm')]: {
-    padding: `0 ${theme.spacing(3)}`,
+    gap: theme.spacing(2),
     flexDirection: 'column-reverse',
   },
 }));
@@ -26,6 +28,11 @@ export const Main = styled(Box)(({ theme }) => ({
 
   '> a': {
     marginTop: theme.spacing(3),
+  },
+
+  [theme.breakpoints.down('sm')]: {
+    alignItems: 'center',
+    textAlign: 'center',
   },
 }));
 

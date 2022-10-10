@@ -29,7 +29,8 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx}",
-      "!src/index.tsx"
+      "!src/index.tsx",
+      "!src/App.tsx"
     ]
   },
   "dependencies": {
@@ -37,8 +38,10 @@
     "@emotion/styled": "^11.10.4",
     "@mui/icons-material": "^5.10.6",
     "@mui/material": "^5.10.8",
+    "@types/mui-image": "^1.0.1",
     "axios": "^1.0.0",
     "i18next": "^21.9.2",
+    "mui-image": "^1.0.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^11.18.6",

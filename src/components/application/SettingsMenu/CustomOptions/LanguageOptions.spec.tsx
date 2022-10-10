@@ -11,7 +11,7 @@ describe('<LanguageOptions />', () => {
     render(<LanguageOptions />);
 
     ALLOWED_LANGUAGES.forEach(option => {
-      expect(getButton(i18n.t(option.translateKey))).toBeTruthy();
+      expect(getButton(i18n.t(option.translateKey))).toBeInTheDocument();
     });
   });
 

@@ -7,10 +7,6 @@ export const Button = styled(ButtonMUI)(({ theme }) => ({
   alignItems: 'center',
   textTransform: 'none',
 
-  svg: {
-    marginTop: '-3px',
-  },
-
   '&.MuiButton-outlinedPrimary': {
     color: theme.palette.primary.dark,
   },

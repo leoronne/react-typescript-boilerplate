@@ -1,12 +1,15 @@
 import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
 
-export const Container = styled(Box)(({ theme }) => ({
-  margin: 'auto',
-  display: 'flex',
-  gap: theme.spacing(2),
-  flexDirection: 'column',
+import { BannerContainer, getBannerContainerHeight } from 'components/ui/Containers';
+
+export const Container = styled(BannerContainer)(({ theme }) => ({
   alignItems: 'center',
-  position: 'relative',
-}));
+  justifyContent: 'center',
+  height: getBannerContainerHeight(false, theme),
 
+  [theme.breakpoints.down('sm')]: {
+    alignItems: 'center',
+    textAlign: 'center',
+    gap: theme.spacing(5),
+  },
+}));

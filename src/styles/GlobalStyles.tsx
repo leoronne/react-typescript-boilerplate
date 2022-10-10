@@ -12,16 +12,8 @@ export const globalStyles = (
         boxSizing: 'border-box',
         scrollBehavior: 'smooth',
       },
-      'html, body, #root': {
-        scrollBehavior: 'smooth',
-        fontFamily: 'Roboto, sans-serif',
-      },
-      '.gradient-text': {
-        color: 'transparent',
-        backgroundClip: 'text',
-        background: 'linear-gradient(89.86deg, #9572FC 27.08%, #0bd890 43.94%, #ffd900 89.57%)',
-        WebkitTextFillColor: 'transparent',
-        WebkitBackgroundClip: 'text',
+      'body': {
+        minHeight: '100vh',
       },
       '::-webkit-scrollbar': {
         width: '2px',
