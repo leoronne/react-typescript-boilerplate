@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { Header, Footer } from 'components/application';
+import Footer from 'components/application/Footer';
+import Header from 'components/application/Header';
+
 import * as Styles from './styles';
 
 export const withDefaultLayout = (Component: React.ElementType) =>

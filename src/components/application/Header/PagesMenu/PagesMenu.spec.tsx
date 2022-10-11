@@ -2,7 +2,7 @@ import { waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import i18n from 'i18next';
 
-import { routesMap } from 'routes';
+import { routesMap } from 'routes/routes-map';
 import { getButton, getByRole, render } from 'utils/test-utils';
 import PagesMenu from './index';
 

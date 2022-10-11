@@ -4,7 +4,13 @@ module.exports = {
     es6: true,
     jest: true,
   },
-  extends: ['airbnb', 'prettier', 'react-app', 'plugin:react/recommended', 'plugin:prettier/recommended'],
+  extends: [
+    'airbnb',
+    'prettier',
+    'react-app',
+    'plugin:react/recommended',
+    'plugin:prettier/recommended',
+  ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -21,6 +27,7 @@ module.exports = {
   rules: {
     camelcase: 'off',
     'react/jsx-filename-extension': 'off',
+    'import/no-cycle': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/no-unused-prop-types': 'warn',
@@ -37,7 +44,7 @@ module.exports = {
     },
     'import/resolver': {
       typescript: {
-        "alwaysTryTypes": true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+        alwaysTryTypes: true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
       },
     },
   },

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import { useDropDownMenu } from 'hooks/useDropDownMenu';
-import { routesMap } from 'routes';
+import { routesMap } from 'routes/routes-map';
 import { IconButton } from 'components/ui/IconButton';
 import DropdownMenu, { MenuItem } from 'components/ui/DropdownMenu';
 
