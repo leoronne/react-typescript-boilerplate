@@ -1,6 +1,6 @@
 import { waitFor, renderHook, act } from '@testing-library/react';
 
-import { useTheme } from 'hooks';
+import { useTheme } from 'hooks/useTheme';
 import ThemeProvider from 'providers/ThemeProvider';
 import { DEFAULT_THEME_MODE, ALLOWED_THEME_MODES, localStorageSlugTheme } from 'shared/consts';
 import { appLocalStorageSlug } from 'utils/local-storage';

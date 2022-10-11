@@ -1,13 +1,12 @@
 import Typography from '@mui/material/Typography';
 import { useTranslation } from 'react-i18next';
 
-import { withDefaultLayout } from 'layouts';
-
 import SayHi from 'components/application/SayHi';
 import * as Styles from './styles';
 
 function Home() {
   const { t } = useTranslation();
+
   return (
     <>
       <Styles.Container>
@@ -19,4 +18,4 @@ function Home() {
   );
 }
 
-export default withDefaultLayout(Home);
+export default Home;

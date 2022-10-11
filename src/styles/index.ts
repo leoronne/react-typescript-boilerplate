@@ -5,21 +5,21 @@ export const theme = (mode: 'dark' | 'light'): ThemeOptions => ({
   palette: {
     mode,
     primary: {
-      main: '#915cec',
+      main: '#A993D9',
       dark: '#a484e8',
       light: '#CFB7F7',
     },
     secondary: {
-      main: '#F7E1B7',
-      dark: '#DAB46E',
-      light: '#F7E1B7',
+      main: '#478291',
+      dark: '#2A4248',
+      light: '#7EB3C0',
     },
     info: {
       main: deepPurple[100],
     },
     background: {
       default: mode === 'dark' ? '#18191a' : common.white,
-      paper: mode === 'dark' ? '#242526' : '#f5f5f5',
+      paper: mode === 'dark' ? '#343434' : '#f5f5f5',
     },
   },
   typography: {

@@ -26,8 +26,8 @@ export const Main = styled(Box)(({ theme }) => ({
   gap: theme.spacing(2),
   flexDirection: 'column',
 
-  '> a': {
-    marginTop: theme.spacing(3),
+  '> button': {
+    marginTop: theme.spacing(5),
   },
 
   [theme.breakpoints.down('sm')]: {
@@ -39,7 +39,7 @@ export const Main = styled(Box)(({ theme }) => ({
 export const NotFoundIcon = styled(NotFoundBg)(({ theme }) => ({
   width: '100%',
   maxWidth: '540px',
-  '& .cls-1': { fill: theme.palette.grey[300] },
+  '& .cls-1': { fill: theme.palette.grey[300], stroke: 'none' },
   '& .cls-2': { fill: theme.palette.grey[700] },
   '& .cls-3': { fill: '#de8e68' },
   '& .cls-4': { fill: '#434354' },

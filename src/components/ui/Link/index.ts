@@ -19,8 +19,8 @@ export const Link = styled(LinkMUI)<LinkProps>(
             content: `''`,
             position: 'absolute',
             width: 0,
-            height: '4px',
-            bottom: '-5px',
+            height: '2px',
+            bottom: 0,
             left: 0,
             backgroundColor: theme.palette.getContrastText(
               theme.palette.background.default

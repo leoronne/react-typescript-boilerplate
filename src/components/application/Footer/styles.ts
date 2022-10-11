@@ -5,7 +5,7 @@ export const MIN_FOOTER_HEIGHT = '100px';
 export const Container = styled('footer')(({ theme }) => ({
   padding: `${theme.spacing(2)} 0`,
   display: 'flex',
-  alignItems: 'flex-end',
+  alignItems: 'center',
   justifyContent: 'center',
   minHeight: MIN_FOOTER_HEIGHT,
 }));

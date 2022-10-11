@@ -73,6 +73,17 @@ export function getHeading(
   });
 }
 
+export function queryHeading(
+  name?:
+    | RegExp
+    | string
+    | ((accessibleName: string, element: Element) => boolean)
+): HTMLElement | null {
+  return screen.queryByRole('heading', {
+    name,
+  });
+}
+
 export function getImage(
   name?:
     | RegExp
@@ -84,13 +95,15 @@ export function getImage(
   });
 }
 
-export function queryHeading(
-  name?:
-    | RegExp
-    | string
-    | ((accessibleName: string, element: Element) => boolean)
-): HTMLElement | null {
-  return screen.queryByRole('heading', {
-    name,
-  });
+export function simulateElement(): HTMLElement {
+  const testElement = (
+    <div data-testid="test-container">
+      <button type="button" aria-label="Test">
+        Test
+      </button>
+    </div>
+  );
+
+  render(testElement);
+  return getButton('Test');
 }

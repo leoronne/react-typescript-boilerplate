@@ -8,7 +8,9 @@ export const withDefaultLayout = (Component: React.ElementType) =>
     return (
       <Styles.Container>
         <Header />
-        <Component {...props} />
+        <Styles.Main>
+          <Component {...props} />
+        </Styles.Main>
         <Footer />
       </Styles.Container>
     );

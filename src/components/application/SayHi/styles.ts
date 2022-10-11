@@ -38,7 +38,7 @@ export const Email = styled(Typography)(({ theme }) => ({
 export const Main = styled(Box)(({ theme }) => ({
   display: 'flex',
   width: '100%',
-  background: '#1f4954',
+  background: theme.palette.secondary.dark,
 }));
 
 export const AvatarContainer = styled(Box)(({ theme }) => ({
@@ -62,6 +62,8 @@ export const Content = styled(Box)(({ theme }) => ({
 
   'a:before': {
     backgroundColor: theme.palette.common.white,
+    height: '4px',
+    bottom: '-7px',
   },
 
   hr: {
