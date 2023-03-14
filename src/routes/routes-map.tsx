@@ -1,7 +1,8 @@
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 
 import { withDefaultLayout } from 'layouts/Default';
-import { Home, NotFound } from 'pages';
+import { Home, NotFound, About } from 'pages';
 
 export const routesMap = [
   {
@@ -16,5 +17,12 @@ export const routesMap = [
     icon: <HomeRoundedIcon fontSize="small" />,
     hideOnMenu: false,
     translateKey: 'homepage.base',
+  },
+  {
+    path: '/about',
+    Component: withDefaultLayout(About),
+    icon: <InfoRoundedIcon fontSize="small" />,
+    hideOnMenu: false,
+    translateKey: 'about.base',
   },
 ];

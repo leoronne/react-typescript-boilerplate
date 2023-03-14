@@ -5,13 +5,19 @@ const englishUS = {
     subtitle: 'This a simple front-end boilerplate for personal projects',
   },
   sayhi: {
-    title: 'Say Hi.',
+    title: 'Say Hi',
     description: `Software Engineer, focused on JavaScript and the React ecosystem. I'm a professional who likes challenges and great ideas that combines technology with the users needs, emerged on the understanding of each person singularities to develop solutions and products that have commercial/social value and simplify people's lives.`,
     sendmail: 'Contact me via email using your default email program, which will opens in a new window'
   },
   notfound: {
     base: 'Page not found',
     title: 'Oops, there is something wrong',
+    description: 'We could not find the page you are looking for',
+    returnbutton: 'Return to homepage'
+  },
+  about: {
+    base: 'About',
+    title: 'About.',
     description: 'We could not find the page you are looking for',
     returnbutton: 'Return to homepage'
   },

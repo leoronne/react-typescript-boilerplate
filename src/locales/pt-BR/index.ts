@@ -10,6 +10,12 @@ const portugueseBR = {
     sendmail:
       'Entre em contato comigo por e-mail usando seu programa de e-mail padrão, que será aberto em uma nova janela',
   },
+  about: {
+    base: 'Sobre',
+    title: 'About.',
+    description: 'We could not find the page you are looking for',
+    returnbutton: 'Return to homepage'
+  },
   notfound: {
     base: 'Página não encontrada',
     title: 'Ops, há algo de errado',

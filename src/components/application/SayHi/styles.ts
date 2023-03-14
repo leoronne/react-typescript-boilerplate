@@ -3,25 +3,6 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-export const Container = styled(Box)(({ theme }) => ({
-  display: 'flex',
-  gap: theme.spacing(2),
-  flexDirection: 'column',
-  position: 'relative',
-  width: '100%',
-}));
-
-export const Title = styled(Typography)(({ theme }) => ({
-  fontSize: '6.5rem',
-  zIndex: 2,
-  marginBottom: `-${theme.spacing(6)}`,
-
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '18vw',
-    marginBottom: `-10vw`,
-  },
-}));
-
 export const Email = styled(Typography)(({ theme }) => ({
   lineBreak: 'anywhere',
 
@@ -33,12 +14,6 @@ export const Email = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down('sm')]: {
     fontSize: '12vw',
   },
-}));
-
-export const Main = styled(Box)(({ theme }) => ({
-  display: 'flex',
-  width: '100%',
-  background: theme.palette.secondary.dark,
 }));
 
 export const AvatarContainer = styled(Box)(({ theme }) => ({
